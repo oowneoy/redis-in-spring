@@ -1,7 +1,8 @@
 services:
   api-server:
-    build: . # Dockerfile 이 있는 경로
-    dockerfile: ./Dockerfile-prod # Dockerfile 명시
+    build: # Dockerfile 이 있는 경로
+      context: .
+      dockerfile: ./Dockerfile-prod # Dockerfile 명시
     ports:
       - 8080:8080
     depends_on:
