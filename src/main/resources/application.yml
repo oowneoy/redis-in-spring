@@ -5,14 +5,14 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 1234
-    url: jdbc:mysql://localhost:3306/redis
+    url: jdbc:mysql://host.docker.internal:3306/redis # Spring Boot ???? ??? database ??
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
   data:
     redis:
-      host: localhost
+      host: cache-server # compose.yml ? cache-server
       port: 6379
 
 logging:

@@ -1,0 +1,17 @@
+services:
+  api-server:
+    build: . # Dockerfile 이 있는 경로
+    dockerfile: ./Dockerfile-prod # Dockerfile 명시
+    ports:
+      - 8080:8080
+    depends_on:
+      cache-server:
+        condition: service_healthy # cache-server 가 정상적으로 실행된 후에 백엔드 서버를 실행
+  cache-server:
+    image: redis
+    ports:
+      - 6379:6379
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 10
