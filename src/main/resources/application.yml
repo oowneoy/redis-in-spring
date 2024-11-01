@@ -28,3 +28,7 @@ spring:
     url: ${DB_URL}
     username: ${DB_USER}
     password: ${DB_PASSWORD}
+  data:
+    redis:
+      host: instagram-cache-server.quucwe.ng.0001.apn2.cache.amazonaws.com # ElastiCache ? ?????
+      port: 6379
