@@ -6,9 +6,9 @@ services:
     ports:
       - 8080:8080
     environment:
-      - DB_URL: ${DB_URL}
-      - DB_USER: ${DB_USER}
-      - DB_PASSWORD: ${DB_PASSWORD}
+      - DB_URL=${DB_URL}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
     depends_on:
       cache-server:
         condition: service_healthy # cache-server 가 정상적으로 실행된 후에 백엔드 서버를 실행
